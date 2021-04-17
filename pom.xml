@@ -14,7 +14,7 @@
 	<name>Book Shelf Organiser</name>
 	<description>A simple app that helps to collect and organize Your book collection</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.1</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
