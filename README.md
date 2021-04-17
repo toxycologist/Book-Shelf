@@ -17,3 +17,6 @@ To show all books:
 Main endpoint to GET, POST, PUT and DELETE
 
 /api/books
+
+Also, You can use:
+https://book-shelf-toxy.herokuapp.com/swagger-ui.html
