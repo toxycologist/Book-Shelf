@@ -1,16 +1,19 @@
-package pl.kiepura.Book.Shelf;
+package pl.kiepura.Book.Shelf.manager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
+import pl.kiepura.Book.Shelf.entity.Book;
+import pl.kiepura.Book.Shelf.entity.Genre;
+import pl.kiepura.Book.Shelf.repo.BookRepo;
 
 import java.util.Optional;
 
 @Service
 public class BookManager {
 
-    private BookRepo bookRepo;
+    private final BookRepo bookRepo;
 
     @Autowired
     public BookManager(BookRepo bookRepo) {

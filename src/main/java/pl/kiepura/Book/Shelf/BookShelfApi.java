@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import pl.kiepura.Book.Shelf.entity.Book;
+import pl.kiepura.Book.Shelf.manager.BookManager;
 
 import java.util.Optional;
 
@@ -17,7 +19,7 @@ import java.util.Optional;
 @RequestMapping("/api/books")
 public class BookShelfApi {
 
-    private BookManager bookManager;
+    private final BookManager bookManager;
 
     @Autowired
     public BookShelfApi(BookManager bookManager) {

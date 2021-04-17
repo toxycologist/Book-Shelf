@@ -1,4 +1,4 @@
-package pl.kiepura.Book.Shelf;
+package pl.kiepura.Book.Shelf.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
