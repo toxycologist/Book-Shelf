@@ -1,6 +1,7 @@
 package pl.kiepura.Book.Shelf;
 
 
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,26 +27,32 @@ public class BookShelfApi {
         this.bookManager = bookManager;
     }
 
+
+    @ApiOperation(value = "Shows all books added to virutal book shelf")
     @GetMapping("/all")
     public Iterable<Book> getAll(){
         return bookManager.findAll();
     }
 
+    @ApiOperation(value = "Shows selected book on virutal book shelf by provided ID")
     @GetMapping
     public Optional<Book> getById(@RequestParam Long index){
         return bookManager.findById(index);
     }
 
+    @ApiOperation(value = "Add a new book to virutal book shelf")
     @PostMapping
     public Book addBook(@RequestBody Book book){
         return bookManager.saveBook(book);
     }
 
+    @ApiOperation(value = "Update book on virutal book shelf")
     @PutMapping
     public Book updateBook(@RequestBody Book book){
         return bookManager.saveBook(book);
     }
 
+    @ApiOperation(value = "Delete one book from virutal book shelf by provided ID")
     @DeleteMapping
     public void deleteBook(@RequestParam Long index) {
         bookManager.deleteById(index);

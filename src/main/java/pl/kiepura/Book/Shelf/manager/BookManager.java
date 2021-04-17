@@ -36,7 +36,7 @@ public class BookManager {
         bookRepo.deleteById(id);
     }
 
-    @EventListener(ApplicationReadyEvent.class)
+/*    @EventListener(ApplicationReadyEvent.class)
     public void fillDB(){
         saveBook(new Book(1L, "Metro 2033", "Dmitrij Głuchowski", Genre.POSTAPO));
         saveBook(new Book(2L, "Metro 2034", "Dmitrij Głuchowski", Genre.POSTAPO));
@@ -45,6 +45,12 @@ public class BookManager {
         saveBook(new Book(5L, "Droga Szamana: Gambit Kartosa", "Wasilij Machanienko", Genre.LitRPG));
         saveBook(new Book(6L, "Droga Szamana: Tajemnica Mrocznego Lasu", "Wasilij Machanienko", Genre.LitRPG));
         saveBook(new Book(7L, "Droga Szamana: Zamek Widmo", "Wasilij Machanienko", Genre.LitRPG));
-    }
+        saveBook(new Book(8L, "Żniwiarz: Pusta noc", "Paulina Hendel", Genre.FANTASY));
+        saveBook(new Book(9L, "Żniwiarz: Czerwone Słońce", "Paulina Hendel", Genre.FANTASY));
+        saveBook(new Book(10L, "Żniwiarz: Trzynasty Księżyc", "Paulina Hendel", Genre.FANTASY));
+        saveBook(new Book(11L, "Żniwiarz: Droga Dusz", "Paulina Hendel", Genre.FANTASY));
+        saveBook(new Book(12L, "Żniwiarz: Czarny Świt", "Paulina Hendel", Genre.FANTASY));
+
+    }*/
 
 }
