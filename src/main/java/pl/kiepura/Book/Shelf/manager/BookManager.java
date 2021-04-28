@@ -1,16 +1,19 @@
-package pl.kiepura.Book.Shelf;
+package pl.kiepura.Book.Shelf.manager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
+import pl.kiepura.Book.Shelf.entity.Book;
+import pl.kiepura.Book.Shelf.entity.Genre;
+import pl.kiepura.Book.Shelf.repo.BookRepo;
 
 import java.util.Optional;
 
 @Service
 public class BookManager {
 
-    private BookRepo bookRepo;
+    private final BookRepo bookRepo;
 
     @Autowired
     public BookManager(BookRepo bookRepo) {
@@ -33,7 +36,7 @@ public class BookManager {
         bookRepo.deleteById(id);
     }
 
-    @EventListener(ApplicationReadyEvent.class)
+/*    @EventListener(ApplicationReadyEvent.class)
     public void fillDB(){
         saveBook(new Book(1L, "Metro 2033", "Dmitrij Głuchowski", Genre.POSTAPO));
         saveBook(new Book(2L, "Metro 2034", "Dmitrij Głuchowski", Genre.POSTAPO));
@@ -42,6 +45,12 @@ public class BookManager {
         saveBook(new Book(5L, "Droga Szamana: Gambit Kartosa", "Wasilij Machanienko", Genre.LitRPG));
         saveBook(new Book(6L, "Droga Szamana: Tajemnica Mrocznego Lasu", "Wasilij Machanienko", Genre.LitRPG));
         saveBook(new Book(7L, "Droga Szamana: Zamek Widmo", "Wasilij Machanienko", Genre.LitRPG));
-    }
+        saveBook(new Book(8L, "Żniwiarz: Pusta noc", "Paulina Hendel", Genre.FANTASY));
+        saveBook(new Book(9L, "Żniwiarz: Czerwone Słońce", "Paulina Hendel", Genre.FANTASY));
+        saveBook(new Book(10L, "Żniwiarz: Trzynasty Księżyc", "Paulina Hendel", Genre.FANTASY));
+        saveBook(new Book(11L, "Żniwiarz: Droga Dusz", "Paulina Hendel", Genre.FANTASY));
+        saveBook(new Book(12L, "Żniwiarz: Czarny Świt", "Paulina Hendel", Genre.FANTASY));
+
+    }*/
 
 }
