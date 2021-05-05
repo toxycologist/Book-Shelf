@@ -1,24 +1,20 @@
 package pl.kiepura.Book.Shelf.manager;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import pl.kiepura.Book.Shelf.dto.AuthorDTO;
 import pl.kiepura.Book.Shelf.entity.Book;
-import pl.kiepura.Book.Shelf.entity.Genre;
 import pl.kiepura.Book.Shelf.repo.BookRepo;
 
+import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @Service
 public class BookManager {
 
     private final BookRepo bookRepo;
 
-    @Autowired
-    public BookManager(BookRepo bookRepo) {
-        this.bookRepo = bookRepo;
-    }
 
     public Optional<Book> findById(Long id) {
         return bookRepo.findById(id);
@@ -36,21 +32,10 @@ public class BookManager {
         bookRepo.deleteById(id);
     }
 
-/*    @EventListener(ApplicationReadyEvent.class)
-    public void fillDB(){
-        saveBook(new Book(1L, "Metro 2033", "Dmitrij Głuchowski", Genre.POSTAPO));
-        saveBook(new Book(2L, "Metro 2034", "Dmitrij Głuchowski", Genre.POSTAPO));
-        saveBook(new Book(3L, "Metro 2035", "Dmitrij Głuchowski", Genre.POSTAPO));
-        saveBook(new Book(4L, "Droga Szamana: Początek", "Wasilij Machanienko", Genre.LitRPG));
-        saveBook(new Book(5L, "Droga Szamana: Gambit Kartosa", "Wasilij Machanienko", Genre.LitRPG));
-        saveBook(new Book(6L, "Droga Szamana: Tajemnica Mrocznego Lasu", "Wasilij Machanienko", Genre.LitRPG));
-        saveBook(new Book(7L, "Droga Szamana: Zamek Widmo", "Wasilij Machanienko", Genre.LitRPG));
-        saveBook(new Book(8L, "Żniwiarz: Pusta noc", "Paulina Hendel", Genre.FANTASY));
-        saveBook(new Book(9L, "Żniwiarz: Czerwone Słońce", "Paulina Hendel", Genre.FANTASY));
-        saveBook(new Book(10L, "Żniwiarz: Trzynasty Księżyc", "Paulina Hendel", Genre.FANTASY));
-        saveBook(new Book(11L, "Żniwiarz: Droga Dusz", "Paulina Hendel", Genre.FANTASY));
-        saveBook(new Book(12L, "Żniwiarz: Czarny Świt", "Paulina Hendel", Genre.FANTASY));
+    public List<AuthorDTO> getAuthors(){
+        return bookRepo.getAuthors();
+    }
 
-    }*/
+
 
 }
